@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+
+    <!--Link to Bootstrap CSS-->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <!--Used internal CSS to style the cells and board that is used for the Tic-Tac-Toe game grid.-->
+    <style>
+        .cell {
+            width: 110px;
+            height: 110px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            border: 2px solid black;
+            cursor: pointer;
+        }
+
+        .board {
+            display: grid;
+            grid-template-columns: repeat(3, 110px);
+            grid-gap: 10px;
+            justify-content: center;
+        }
+    </style>
+
+</head>
+
+<!--Added background color via Bootstrap.-->
+<body class="p-3 mb-2 bg-info-subtle text-info-emphasis">
+
+<!--Game grid for Tic-Tac-Toe-->
+<div class="container mt-4">
+    <h1 class="text-center mb-4">Tic-Tac-Toe</h1>
+
+    <!--Text to show turn, starting with X.-->
+    <div class="text-center mb-3">
+        <h2 id="turn">X's Turn</h2>
+    </div>
+
+    <!--Grid for Tic-Tac-Toe so each player can make their move.-->
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-6">
+            <div class="board">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <!--Button to clear the grid and restart the game.-->
+    <div class="text-center mb-4">
+        <button class="btn btn-info" id="restartBtn"><b>Restart Game</b></button>
+    </div>
+
+    <!--Alert that is used for a win or draw.-->
+    <div id="resultAlert" class="alert alert-dismissible d-none mt-4 fade show" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <strong id="resultText"></strong>
+    </div>
+</div>
+
+<!--Scripts added for jQuery & Bootstrap for functionality along with the JS file.-->
+<script src="node_modules/jquery/dist/jquery.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+<script src="tic-tac-toe.js"></script>
+</body>
+</html>
